@@ -1,9 +1,9 @@
 pipeline {
-agent { label 'node-java' }
+agent { label 'java-node' }
 stages {
 
 stage ('build') {
-agent { label 'node-java' }
+agent { label 'java-node' }
 steps {
 
 sh ''' cd /home/ubuntu/jenkins/workspace/javaproject1
