@@ -6,8 +6,10 @@ stage ('build') {
 agent { label 'java-node' }
 steps {
 
-sh ''' cd /home/ubuntu/jenkins/workspace/javaproject1
-mvn clean install '''
+sh ''' 
+cd /home/ubuntu/jenkins/workspace/javaproject1
+mvn clean install
+'''
 
 }
 }
@@ -21,3 +23,5 @@ echo " this is deploy stage "
 }
 }
 }
+
+
