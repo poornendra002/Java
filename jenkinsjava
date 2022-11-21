@@ -7,7 +7,7 @@ agent { label 'java-node' }
 steps {
 
 sh ''' 
-cd /home/ubuntu/jenkins/workspace/javaproject1
+cd /home/ubuntu/jenkins/workspace/javaproject2
 mvn clean install
 '''
 
@@ -15,9 +15,11 @@ mvn clean install
 }
 
 stage ('deploy') {
-agent { label 'poorna' }
+agent { label 'java-node' }
 steps {
-echo " this is deploy stage "
+sh '''
+sudo cp /home/ubuntu/jenkins/workspace/javaproject2/target/hello-world-war-1.0.0.war /opt/tomcat/webapps
+'''
 
 }
 }
